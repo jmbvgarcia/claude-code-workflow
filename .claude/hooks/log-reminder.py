@@ -11,15 +11,18 @@ Adapted from: https://gist.github.com/michaelewens/9a1bc5a97f3f9bbb79453e5b682df
 Usage (in .claude/settings.json):
     "Stop": [{ "hooks": [{ "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/log-reminder.py" }] }]
 """
+from __future__ import annotations
 
 import json
 import sys
 import hashlib
+import os
 from pathlib import Path
 from datetime import datetime
 
 THRESHOLD = 15
-STATE_DIR = Path("/tmp/claude-log-reminder")
+_PROJECT_DIR = os.environ.get("CLAUDE_PROJECT_DIR", "")
+STATE_DIR = (Path(_PROJECT_DIR) / ".claude" / "state" / "log-reminder") if _PROJECT_DIR else Path("/tmp/claude-log-reminder")
 
 
 def get_project_dir():

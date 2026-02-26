@@ -56,12 +56,14 @@ paths:
 Generated **only at merge time**. Use `templates/quality-report.md` for format.
 Save to `quality_reports/merges/YYYY-MM-DD_[branch-name].md`.
 
-## Tolerance Thresholds (Research)
-
-<!-- Customize for your domain -->
+## Tolerance Thresholds (Development Economics)
 
 | Quantity | Tolerance | Rationale |
 |----------|-----------|-----------|
-| Point estimates | [e.g., 1e-6] | [Numerical precision] |
-| Standard errors | [e.g., 1e-4] | [MC variability] |
-| Coverage rates | [e.g., +/- 0.01] | [MC with B reps] |
+| Annual growth rates | ±0.01 pp | Typical measurement error in PWT data |
+| Gini coefficients | ±0.001 | WIID/LIS sampling precision |
+| GDP per capita ratios | ±0.01 | PPP conversion tolerance |
+| OLS regression coefficients | ±0.0001 | Replication from published tables |
+| IV/2SLS estimates | ±0.001 | LIML vs 2SLS differences acceptable |
+| Solow steady-state $k^*$ | ±0.001 | Numerical solution tolerance |
+| Speed of convergence $\lambda$ | ±0.001 | Linearization approximation |

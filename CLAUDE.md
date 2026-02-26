@@ -1,12 +1,7 @@
 # CLAUDE.MD -- Academic Project Development with Claude Code
 
-<!-- HOW TO USE: Replace [BRACKETED PLACEHOLDERS] with your project info.
-     Customize Beamer environments and CSS classes for your theme.
-     Keep this file under ~150 lines — Claude loads it every session.
-     See the guide at docs/workflow-guide.html for full documentation. -->
-
-**Project:** [YOUR PROJECT NAME]
-**Institution:** [YOUR INSTITUTION]
+**Project:** Economía del Desarrollo
+**Institution:** Universidad de Santiago de Chile (USACH)
 **Branch:** main
 
 ---
@@ -24,7 +19,7 @@
 ## Folder Structure
 
 ```
-[YOUR-PROJECT]/
+EconDesarrollo/
 ├── CLAUDE.MD                    # This file
 ├── .claude/                     # Rules, skills, agents, hooks
 ├── Bibliography_base.bib        # Centralized bibliography
@@ -96,32 +91,27 @@ python scripts/quality_score.py Quarto/file.qmd
 
 ---
 
-<!-- CUSTOMIZE: Replace the example entries below with your own
-     Beamer environments and Quarto CSS classes. These are examples
-     from the original project — delete them and add yours. -->
-
 ## Beamer Custom Environments
 
-| Environment       | Effect        | Use Case       |
-|-------------------|---------------|----------------|
-| `[your-env]`      | [Description] | [When to use]  |
-
-<!-- Example entries (delete and replace with yours):
-| `keybox` | Gold background box | Key points |
-| `highlightbox` | Gold left-accent box | Highlights |
-| `definitionbox[Title]` | Blue-bordered titled box | Formal definitions |
--->
+| Environment          | Effect                    | Use Case                  |
+|----------------------|---------------------------|---------------------------|
+| `definitionbox[T]`   | Navy-bordered titled box  | Formal definitions        |
+| `keybox`             | Teal background box       | Key insights & takeaways  |
+| `highlightbox`       | Amber accent box          | Alerts & emphasis         |
+| `methodbox`          | Navy left-accent box      | Methods & mechanisms      |
+| `quotebox`           | Italic amber-accent box   | Economic quotes           |
+| `resultbox`          | Amber-bordered box        | Empirical results         |
 
 ## Quarto CSS Classes
 
-| Class              | Effect        | Use Case       |
-|--------------------|---------------|----------------|
-| `[.your-class]`    | [Description] | [When to use]  |
-
-<!-- Example entries (delete and replace with yours):
-| `.smaller` | 85% font | Dense content slides |
-| `.positive` | Green bold | Good annotations |
--->
+| Class       | Effect                | Use Case                   |
+|-------------|-----------------------|----------------------------|
+| `.smaller`  | 85% font size         | Dense content slides       |
+| `.smallest` | 80% font size         | Very dense slides/tables   |
+| `.positive` | Forest green bold     | Good outcomes, growth      |
+| `.negative` | Crimson bold          | Poverty, bad outcomes      |
+| `.neutral`  | Slate gray            | Context, caveats           |
+| `.compact`  | Reduced spacing       | Equation-heavy slides      |
 
 ---
 
@@ -129,5 +119,15 @@ python scripts/quality_score.py Quarto/file.qmd
 
 | Lecture | Beamer | Quarto | Key Content |
 |---------|--------|--------|-------------|
-| 1: [Topic] | `Lecture01_Topic.tex` | `Lecture1_Topic.qmd` | [Brief description] |
-| 2: [Topic] | `Lecture02_Topic.tex` | -- | [Brief description] |
+| 1: Introducción al desarrollo | `Lecture01_Intro.tex` | -- | Stylized facts, income differences |
+| 2: Malthus y la transición | `Lecture02_Malthus.tex` | -- | Malthusian model, demographic transition |
+| 3: El modelo de Solow | `Lecture03_Solow.tex` | -- | Steady-state, convergence, MRW |
+| 4: Ideas y crecimiento | `Lecture04_Ideas.tex` | -- | Romer, endogenous growth, TFP |
+| 5: Geografía y desarrollo | `Lecture05_Geografia.tex` | -- | Sachs, tropics, natural resources |
+| 6: Instituciones | `Lecture06_Instituciones.tex` | -- | AJR, colonial origins, institutions |
+| 7: Cultura y desarrollo | `Lecture07_Cultura.tex` | -- | Weber, trust, Tabellini |
+| 8: Comercio y globalización | `Lecture08_Comercio.tex` | -- | Openness, trade policy, ISI |
+| 9: Trampas de pobreza | `Lecture09_Trampas.tex` | -- | Big push, S-curves, equilibria |
+| 10: Salud y educación | `Lecture10_SaludEdu.tex` | -- | RCTs, Kremer, Duflo |
+| 11: Crédito y microfinanzas | `Lecture11_Credito.tex` | -- | Market failures, microcredit |
+| 12: Gobierno y fallas | `Lecture12_Gobierno.tex` | -- | Corruption, aid debate |

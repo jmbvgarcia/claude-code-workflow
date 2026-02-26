@@ -48,26 +48,23 @@ Repeat
 
 ---
 
-## Non-Negotiables (Customize These)
+## Non-Negotiables
 
-<!-- Replace with YOUR project's locked-in preferences -->
-
-- [YOUR PATH CONVENTION] (e.g., `here::here()` for R, relative paths for LaTeX)
-- [YOUR SEED CONVENTION] (e.g., `set.seed()` once at top for stochastic code)
-- [YOUR FIGURE STANDARDS] (e.g., white bg, 300 DPI, custom theme)
-- [YOUR COLOR PALETTE] (e.g., institutional colors)
-- [YOUR TOLERANCE THRESHOLDS] (e.g., 1e-6 for point estimates)
+- **Paths:** `here::here()` for R; `TEXINPUTS=../Preambles:$TEXINPUTS` for LaTeX
+- **Seeds:** `set.seed(YYYYMMDD)` once at top for any stochastic R code
+- **Figures:** transparent background, 12×5 in (Beamer widescreen), `theme_devecon`
+- **Colors:** Deep Navy `#1B2A4A` · Warm Teal `#2A7F8E` · Amber `#D4A843` · Forest Green `#15803d` · Crimson `#b91c1c`
+- **Language:** All slide text in Spanish; formulas use standard international notation
+- **Data:** PWT 10.0 for macro aggregates; WDI for cross-country comparisons; always document version
 
 ---
 
 ## Preferences
 
-<!-- Fill in as you discover your working style -->
-
-**Visual:** [How you want figures/plots handled]
-**Reporting:** [Concise bullets? Detailed prose? Details on request?]
+**Visual:** Transparent background, `theme_devecon`, 300 DPI for static exports
+**Reporting:** Concise bullets; details on request; flag near-misses in tolerance checks
 **Session logs:** Always (post-plan, incremental, end-of-session)
-**Replication:** [How strict? Flag near-misses?]
+**Replication:** Flag if ±5% from published estimates; investigate if ±10%
 
 ---
 

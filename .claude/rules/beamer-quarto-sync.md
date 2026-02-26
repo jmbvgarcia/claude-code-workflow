@@ -14,12 +14,21 @@ When you modify a Beamer `.tex` file, you MUST also apply the equivalent change 
 
 ## Lecture Mapping
 
-<!-- Customize this table for your lectures -->
 | Lecture | Beamer | Quarto |
 |---------|--------|--------|
-| 1 | `Slides/Lecture1_Topic.tex` | `Quarto/Lecture1_Topic.qmd` |
-| 2 | `Slides/Lecture2_Topic.tex` | `Quarto/Lecture2_Topic.qmd` |
-<!-- Add rows as you create lectures -->
+| 1 | `Slides/Lecture01_Intro.tex` | -- |
+| 2 | `Slides/Lecture02_Malthus.tex` | -- |
+| 3 | `Slides/Lecture03_Solow.tex` | -- |
+| 4 | `Slides/Lecture04_Ideas.tex` | -- |
+| 5 | `Slides/Lecture05_Geografia.tex` | -- |
+| 6 | `Slides/Lecture06_Instituciones.tex` | -- |
+| 7 | `Slides/Lecture07_Cultura.tex` | -- |
+| 8 | `Slides/Lecture08_Comercio.tex` | -- |
+| 9 | `Slides/Lecture09_Trampas.tex` | -- |
+| 10 | `Slides/Lecture10_SaludEdu.tex` | -- |
+| 11 | `Slides/Lecture11_Credito.tex` | -- |
+| 12 | `Slides/Lecture12_Gobierno.tex` | -- |
+<!-- Update Quarto column as translations are created -->
 
 ## Workflow (Every Time)
 
@@ -34,7 +43,7 @@ When you modify a Beamer `.tex` file, you MUST also apply the equivalent change 
 | Beamer | Quarto Equivalent |
 | ------ | ----------------- |
 | `\muted{text}` | `[text]{style="color: #525252;"}` |
-| `\key{text}` | `[**text**]{.emorygold}` |
+| `\key{text}` | `[**text**]{.tealaccent}` |
 | `\textcolor{positive}{text}` | `[text]{.positive}` |
 | `\textcolor{negative}{text}` | `[text]{.negative}` |
 | `\item text` | `- text` |

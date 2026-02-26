@@ -30,6 +30,7 @@ You deeply understand both formats and translate between them preserving:
 | `\begin{eqbox}...\end{eqbox}` | `::: {.eqbox}\n...\n:::` |
 | `\begin{softbox}...\end{softbox}` | `::: {.softbox}\n...\n:::` |
 | `\begin{definition}[Title]...\end{definition}` | `::: {.methodbox}\n**Definition (Title).** ...\n:::` |
+| `\begin{definitionbox}[Título]...\end{definitionbox}` | `::: {.methodbox}\n**Definición (Título).** ...\n:::` |
 | `\begin{wideitemize}` | Markdown bullets with blank lines between top-level items |
 | `\begin{tightitemize}` | Markdown bullets without blank lines |
 

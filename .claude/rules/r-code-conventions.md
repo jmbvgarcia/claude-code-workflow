@@ -34,20 +34,21 @@ paths:
 ## 4. Visual Identity
 
 ```r
-# --- Your institutional palette ---
-primary_blue  <- "#012169"
-primary_gold  <- "#f2a900"
-accent_gray   <- "#525252"
-positive_green <- "#15803d"
-negative_red  <- "#b91c1c"
+# --- Development Economics color palette ---
+primary_navy   <- "#1B2A4A"   # Deep Navy: headings, primary accents
+warm_teal      <- "#2A7F8E"   # Warm Teal: secondary emphasis
+accent_amber   <- "#D4A843"   # Amber: highlights, alerts
+positive_green <- "#15803d"   # Forest Green: good outcomes, growth
+negative_red   <- "#b91c1c"   # Crimson: poverty, bad outcomes
+slate_gray     <- "#525252"   # Slate Gray: reference/context
 ```
 
 ### Custom Theme
 ```r
-theme_custom <- function(base_size = 14) {
+theme_devecon <- function(base_size = 14) {
   theme_minimal(base_size = base_size) +
     theme(
-      plot.title = element_text(face = "bold", color = primary_blue),
+      plot.title = element_text(face = "bold", color = primary_navy),
       legend.position = "bottom"
     )
 }
@@ -73,6 +74,11 @@ saveRDS(result, file.path(out_dir, "descriptive_name.rds"))
 |---------|--------|------------|
 | Missing `bg = "transparent"` | White boxes on slides | Always include in ggsave() |
 | Hardcoded paths | Breaks on other machines | Use relative paths |
+| PWT version drift | `pwt10.0` columns renamed across sub-versions | Pin version in `renv.lock`; check `names(pwt10.0)` |
+| WDI indicator codes change | Silent `NA` in panel data | Use `WDIsearch()` to verify codes; inspect for `NA` |
+| Log of zero income | `-Inf` propagates silently | Use `log1p()` or explicit `filter(y > 0)`; document |
+| Gini from LIS vs WDI differ | Inconsistent comparisons (±5 pts) | Document source; never mix LIS and WDI Ginis in same chart |
+| HDI not in standard WDI | `WDI()` returns `NA` | Use UNDP API or pre-downloaded HDR data |
 
 ## 7. Line Length & Mathematical Exceptions
 

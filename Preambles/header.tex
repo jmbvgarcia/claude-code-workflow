@@ -1,0 +1,197 @@
+% =============================================================================
+% header.tex -- Beamer preamble for Economía del Desarrollo
+% Universidad de Santiago de Chile (USACH)
+%
+% Usage: compile from Slides/ with TEXINPUTS=../Preambles:$TEXINPUTS
+% Compiler: XeLaTeX only (fontspec requires it)
+% =============================================================================
+
+% --- Language ---
+\usepackage[spanish,es-nodecimaldot]{babel}
+
+% --- XeLaTeX Font Configuration ---
+\usepackage{fontspec}
+\setmainfont{Source Sans Pro}
+\setsansfont{Source Sans Pro}
+
+% --- Standard Math & Graphics ---
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+
+% --- TikZ ---
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes, calc, decorations.pathreplacing}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% --- Bibliography ---
+\usepackage{natbib}
+\bibliographystyle{apalike}
+
+% --- Color Palette ---
+\usepackage{xcolor}
+\definecolor{primarynavy}{HTML}{1B2A4A}    % Deep Navy   -- headings, primary
+\definecolor{warmteal}{HTML}{2A7F8E}       % Warm Teal   -- emphasis
+\definecolor{accentamber}{HTML}{D4A843}    % Amber       -- highlights/alerts
+\definecolor{lightgray}{HTML}{EDF1F5}      % Cool Gray   -- backgrounds
+\definecolor{positivegreen}{HTML}{15803d}  % Forest Green -- good outcomes
+\definecolor{negativered}{HTML}{b91c1c}    % Crimson     -- bad outcomes
+\definecolor{slategray}{HTML}{525252}      % Slate Gray  -- muted text
+
+% --- tcolorbox (required for custom environments below) ---
+\usepackage[most]{tcolorbox}
+
+% --- Hyperlinks ---
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=primarynavy,
+  citecolor=warmteal,
+  urlcolor=warmteal
+}
+
+% =============================================================================
+% CUSTOM COMMANDS
+% =============================================================================
+
+% \key{text}      -- bold teal, for key terms
+% \muted{text}    -- slate gray, for caveats/context
+% \positive{text} -- forest green bold, for good outcomes
+% \negative{text} -- crimson bold, for bad outcomes/poverty
+
+\newcommand{\key}[1]{\textbf{\textcolor{warmteal}{#1}}}
+\newcommand{\muted}[1]{\textcolor{slategray}{#1}}
+\newcommand{\positive}[1]{\textcolor{positivegreen}{\textbf{#1}}}
+\newcommand{\negative}[1]{\textcolor{negativered}{\textbf{#1}}}
+
+% =============================================================================
+% CUSTOM BEAMER ENVIRONMENTS
+% =============================================================================
+
+% definitionbox[Título]: navy-bordered titled box for formal definitions
+\newenvironment{definitionbox}[1]{%
+  \begin{tcolorbox}[
+    title={#1},
+    fonttitle=\bfseries,
+    colbacktitle=primarynavy,
+    coltitle=white,
+    colback=primarynavy!6,
+    colframe=primarynavy,
+    boxrule=1.5pt,
+    arc=4pt,
+    left=8pt, right=8pt, top=4pt, bottom=6pt
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+% keybox: teal background box for key insights & takeaways
+\newenvironment{keybox}{%
+  \begin{tcolorbox}[
+    colback=warmteal!10,
+    colframe=warmteal,
+    boxrule=0pt,
+    leftrule=4pt,
+    arc=3pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+% highlightbox: amber accent box for alerts & emphasis
+\newenvironment{highlightbox}{%
+  \begin{tcolorbox}[
+    colback=accentamber!8,
+    colframe=accentamber,
+    boxrule=0pt,
+    leftrule=4pt,
+    arc=3pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+% methodbox: navy left-accent box for methods & mechanisms
+\newenvironment{methodbox}{%
+  \begin{tcolorbox}[
+    colback=primarynavy!6,
+    colframe=primarynavy,
+    boxrule=0pt,
+    leftrule=4pt,
+    arc=3pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+% quotebox: italic amber-accent box for economic quotes
+\newenvironment{quotebox}{%
+  \begin{tcolorbox}[
+    colback=accentamber!6,
+    colframe=accentamber!50,
+    boxrule=0pt,
+    leftrule=4pt,
+    arc=0pt,
+    left=14pt, right=8pt, top=6pt, bottom=6pt,
+    fontupper=\itshape
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+% resultbox: amber-bordered box for empirical results
+\newenvironment{resultbox}{%
+  \begin{tcolorbox}[
+    colback=accentamber!12,
+    colframe=accentamber,
+    boxrule=2pt,
+    arc=4pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+% =============================================================================
+% BEAMER THEME CONFIGURATION
+% =============================================================================
+
+\usetheme{default}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+% Core colors
+\setbeamercolor{frametitle}{fg=primarynavy, bg=white}
+\setbeamercolor{title}{fg=primarynavy}
+\setbeamercolor{subtitle}{fg=warmteal}
+\setbeamercolor{author}{fg=primarynavy}
+\setbeamercolor{date}{fg=accentamber}
+\setbeamercolor{structure}{fg=primarynavy}
+\setbeamercolor{alerted text}{fg=accentamber}
+
+% Bullet point colors
+\setbeamercolor{itemize item}{fg=primarynavy}
+\setbeamercolor{itemize subitem}{fg=warmteal}
+\setbeamertemplate{itemize item}{$\bullet$}
+\setbeamertemplate{itemize subitem}{$\rightarrow$}
+
+% Frame title with amber underline
+\setbeamertemplate{frametitle}{%
+  \vspace{0.4em}%
+  {\color{primarynavy}\textbf{\insertframetitle}}%
+  \vspace{0.15em}%
+  \newline{\color{accentamber}\rule{\textwidth}{0.5pt}}%
+}
+
+% Block environments
+\setbeamercolor{block title}{bg=primarynavy!90, fg=white}
+\setbeamercolor{block body}{bg=primarynavy!8, fg=black}
+\setbeamercolor{block title alerted}{bg=accentamber!80, fg=white}
+\setbeamercolor{block body alerted}{bg=accentamber!10, fg=black}
